@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>GUESS_NUMBER GAME</title>
+<link rel="stylesheet" href="style.css">
+<body>
+<h1 id="mhead">Computer Has Guessed A Number Between 0 And 100 Which You Have To GUESS....</h1>
+<h2 id="head">Guess To Start The Game...</h2>
+<lable>Guess Number</lable>
+<input type="number"/ id="input">
+<button onclick=guess() id="btn">CONFIRM</button><hr/>
+<p id="p">Remaining Guesses: <span id="pspan">8</span></p></div>
+<script>
+let Try=0;
+let c_guess=Math.floor(Math.random()*(99)+1)
+console.log(c_guess)
+function guess(){
+let y_guess=Number(input.value);
+if (y_guess>0 && y_guess<100 && Try<10){
+Try+=1;
+pspan.innerHTML=8-Try;
+if(Try===8){
+head.innerHTML="You Have Lost The Game :-(";
+return;
+}
+else if(c_guess===y_guess){
+head.innerHTML=`CONGRATS! You Won The Game:) in just ${Try} Turns.`;
+}
+else if(c_guess>y_guess){
+head.innerHTML="Your Guess Is Too Low ;-;";
+}
+else if(c_guess<y_guess) {
+head.innerHTML="Your Guess Is Too High ;-;";
+}
+}
+else{
+head.innerHTML="Wrong Input X****X :-!";
+}
+input.value="";
+
+}
+</script>
+</body>
+</html>
